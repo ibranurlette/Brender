@@ -1,0 +1,113 @@
+#title_profile{
+  color: white;
+  font-size: 28px;
+}
+#back{
+  margin-right: 20px !important;
+  max-height: 100px;
+}
+#seting, #distance{
+  color: white;
+}
+.col_profile{
+  background: #ffffff;
+  width: 700px !important;
+  height:690px !important;
+  overflow-y: scroll;
+}
+.col_profile::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+ /* border-radius: 10px;*/
+  background-color: #333333;
+}
+.col_profile::-webkit-scrollbar
+{
+  width: 10px;
+  height: 10px !important;
+  background-color: #333333 !important;
+}
+
+#match{
+  font-size: 28px;
+}
+.icon_image{
+  border-radius: 50%;
+  width:  70px;
+  height: 70px;
+  border:  2px solid grey;
+  margin-bottom: 13px;
+
+}
+#acount{
+  background-color: #333333;
+  padding: 15px;
+  margin-bottom: 3px;
+  border-radius: 10px;
+  margin-left: 10px;
+  color: #ffffff;
+}
+#acount2{
+  float: right;
+}
+#form_kiri{
+  background-color: #333333;
+  padding: 15px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.logout{
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none !important;
+  background: linear-gradient(120deg,#f17362,#e32249,#e32249);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+  margin-top: 5px;
+}
+.col_profile2{
+   overflow: auto;
+   height: 685px;
+   width: 1020px;
+   background-image: url('backg_home.jpg');
+}
+.card_profile{
+   margin-left: 300px;
+   border-radius: 20px !important;
+   border:2px solid white !important;
+   width: 350px !important;
+   height: 800px;
+   margin-bottom: 10px;
+}
+.card_img{
+    border-radius: 10px !important;
+}
+#btn_edit{
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: none !important;
+  background: linear-gradient(120deg,#ffe75e,#feb72b,#feb72b);
+  background-size: 200%;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  transition: .5s;
+  margin-top: 5px;
+}
+#singa{
+  float: right;
+}
+#person, #miles, #gender, #phone_number{
+  margin-right: 10px;
+  width: 25px;
+  height: 25px;
+  margin-bottom: 5px;
+}
+#about{
+  margin-top: 20px !important;
+}

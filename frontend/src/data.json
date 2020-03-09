@@ -1,0 +1,55 @@
+[{
+    "pics": ["kucing5.jpg"],
+    "name": "luffy",
+    "distance": "4 miles away",
+    "text": "He was named Luffy, in the dream of becoming a pirate king"
+  },
+  {
+    "pics": ["kucing6.jpg"],
+    "name": "zoro",
+    "distance": "11 miles away",
+    "text": "he is called zoro, he is very cool, but he is also very blind"
+  },
+  {
+    "pics": ["kucing7.jpg"],
+    "name": "nami",
+    "distance": "13 miles away",
+    "text": "he was named nami, a great navigator in the straw hat pirate crew"
+  },
+  {
+    "pics": ["kucing8.jpg"],
+    "name": "usop",
+    "distance": "8 miles away",
+    "text": "Usop is a coward and a true liar, he wants to be a brave man in the ocean."
+  },
+  {
+    "pics": ["kucing9.jpg"],
+    "name": "sanji",
+    "distance": "9 miles away",
+    "text": "Sanji, the best chef ever, has the best in the world"
+  },
+  {
+    "pics": ["kucing1.jpg"],
+    "name": "choper",
+    "distance": "4 miles away",
+    "text": "Choper, a doctor, he is a raccoon who can talk"
+  },
+  {
+    "pics": ["kucing2.jpg"],
+    "name": "robin",
+    "distance": "5 miles away",
+    "text": "Robin is an arakeologist who can read poneglif stones that contain world history"
+  },
+  {
+    "pics": ["kucing3.jpg"],
+    "name": "brook",
+    "distance": "15 miles away",
+    "text": "brook, a skull and also a musician, the music is very pleasant to hear"
+  },
+  {
+    "pics": ["kucing4.jpg"],
+    "name": "jimbe",
+    "distance": "2 miles away",
+    "text": "Jimba is a former Shichibukai. he is also a brave sea knight at sea"
+  }
+]

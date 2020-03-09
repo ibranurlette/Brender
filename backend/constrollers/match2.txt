@@ -1,0 +1,290 @@
+const models = require("../models");
+const Pet = models.pet;
+const User = models.user;
+const Spesies = models.spesies;
+const Match = models.match;
+
+exports.check_match = async(req, res ) => {
+	const {pet_id, pet_id_liked} = req.query;
+	try{
+		const data = await Match.findOne({ where: {pet_id, pet_id_liked}});
+		if(data){
+			const pet = await Pet.findOne({
+				include: [
+  				{
+  					model:User,
+  					as: "use",
+  					attributes:['id', 'breder', 'addres', 'phone']
+  				},
+				{
+					model:Spesies,
+					as: "spes",
+					attributes:['id', 'name']
+				}
+				],
+				attributes: {exclude : ['user', 'spesies', 'createdAt', 'updatedAt']},
+				where: {id: pet_id}
+			});
+			const pet_liked = await Pet.findOne({
+				include: [
+					{
+					model:User,
+					as: "use",
+					attributes:['id', 'breder', 'addres', 'phone']
+				},
+				{
+					model:Spesies,
+					as: "spes",
+					attributes:['id', 'name']
+				}
+				],
+				attributes: {exclude : ['user', 'spesies', 'createdAt', 'updatedAt']},
+				where: {id: pet_id_liked}
+			});
+			res.status(200).send({
+				status: true,
+				message: "cocok",
+				data: {
+					id: data.id,
+					status:data.status,
+					pet,
+					pet_liked,
+					createdAt: data.createAt,
+					updatedAt: data.updatedAt
+				}
+			});
+		}else{
+			res.status(204).send({
+				status:false,
+				message:"gk cocok"
+			});
+		}
+	}catch(err){
+		console.log(err);
+	}
+};
+
+
+//add_match
+exports.add_match = async (req, res) => {
+  try {
+    const data = await Match.create(req.body);
+
+    const findMatch = await Match.findOne({
+      include: [
+        {
+          model: Pet,
+          as: "pet",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        },
+        {
+          model: Pet,
+          as: "pet_liked",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        }
+      ],
+      attributes: { exclude: ["createdAt", "UpdatedAt"] },
+      where: { id: data.id }
+    });
+
+    res.status(200).send({
+      status: true,
+      message: "pet yang cocok, berhasil di tambahkan",
+      data: findMatch
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+exports.update_match = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { pet_id, pet_id_liked, status } = req.body;
+    const match = await Match.update(
+      { pet_id, pet_id_liked, status },
+      { where: { id } }
+    );
+
+    const findMatch = await Match.findOne({
+      include: [
+        {
+          model: Pet,
+          as: "pet",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        },
+        {
+          model: Pet,
+          as: "pet_liked",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        }
+      ],
+      attributes: { exclude: ["createdAt", "UpdatedAt"] },
+      where: { id }
+    });
+
+    res.status(200).send({
+      status: true,
+      message: "pet cocok berhasil di update",
+      data: findMatch
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+exports.detail_match = async (req, res) => {
+  const { pet_id, status } = req.query;
+  try {
+    const data = await Match.findAll({
+      include: [
+        {
+          model: Pet,
+          as: "pet",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        },
+        {
+          model: Pet,
+          as: "pet_liked",
+          include: [
+            {
+              model: User,
+              as: "use",
+              attributes: ["id", "breder", "addres", "phone"]
+            },
+            {
+              model: Spesies,
+              as: "spes",
+              attributes: ["id", "name"]
+            }
+          ],
+          attributes: [
+            "id",
+            "name",
+            "gender",
+            "spesies",
+            "age",
+            "user",
+            "about_pet",
+            "photo"
+          ]
+        }
+      ],
+      attributes: { exclude: ["createdAt", "UpdatedAt"] },
+      where: { pet_id, status }
+    });
+
+    res.status(200).send({
+      status: true,
+      message: "pet cocok",
+      data
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

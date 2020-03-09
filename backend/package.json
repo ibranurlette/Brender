@@ -1,0 +1,26 @@
+{
+  "name": "express2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodemon server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^4.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "init": "^0.1.2",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.2",
+    "sequelize": "^5.21.4",
+    "sequelize-cli": "^5.5.1",
+    "validator": "^12.2.0"
+  }
+}

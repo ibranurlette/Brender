@@ -1,0 +1,22 @@
+.gambar{
+  width: 50px;
+  height: 50px;
+  margin-left: 310px !important;
+  color: #fddb3a !important;
+
+}
+@media only screen and (max-width: 360px) {
+  .gambar {
+    margin-left: 125px !important;
+  }
+}
+.title_gambar{
+  color: white !important;
+  font-weight: bold;
+  margin-left: 286px !important;
+}
+@media only screen and (max-width: 360px) {
+  .title_gambar {
+    margin-left: 105px !important;
+  }
+}

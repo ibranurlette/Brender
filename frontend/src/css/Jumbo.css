@@ -1,0 +1,45 @@
+/*.jumbo{
+  color: #f6f4e6;
+  text-shadow: 1px 1px ;
+}*/
+.title{
+  font-family: arial;
+  font-size: 25px;
+  font-weight: bold;
+  color: #f6f4e6;
+  text-shadow: 1px 1px #21243d;
+}
+@media only screen and (max-width: 360px) {
+  .title {
+    font-size: 15px;
+  }
+}
+.judul_jumbo{
+  font-size: 70px;
+  font-family: fantasy;
+  color:  #fddb3a;
+  text-shadow: 2px 2px #21243d;
+  margin-top: 30px;
+}
+@media only screen and (max-width: 360px) {
+  .judul_jumbo {
+    font-size: 40px;
+    margin-top: 0;
+  }
+}
+.jumbo_title{
+  color: #fddb3a;
+  text-transform: bold;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 360px) {
+  .jumbo_title {
+    font-size: 30px !important;
+  }
+}
+.jumbo_title{
+  font-size: 40px;
+  font-family: fantasy;
+  color:  #fddb3a;
+  text-shadow: 2px 2px #21243d;
+}
